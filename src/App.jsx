@@ -435,7 +435,7 @@ function App() {
                 >
                   <h2 className="text-4xl md:text-5xl font-bold text-white">Our Heritage</h2>
                   <p className="text-lg leading-relaxed text-gray-300">
-                    Since 1994, Superformance has been the world leader in building authentic, officially-licensed recreations of classic cars. We are dedicated to building vehicles of the highest quality, with attention to detail and a passion for automotive history. Our mission is to provide enthusiasts with the opportunity to own a piece of history that is not only beautiful, but also performs at the highest level.
+                    Since 1996, Superformance has been the world leader in building authentic, officially-licensed recreations of classic cars. We are dedicated to building vehicles of the highest quality, with attention to detail and a passion for automotive history. Our mission is to provide enthusiasts with the opportunity to own a piece of history that is not only beautiful, but also performs at the highest level.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-300">
                     The provided image is a placeholder and should not be considered an actual photograph of a Superformance car. It is included for design purposes only.
@@ -449,7 +449,7 @@ function App() {
                   transition={{ duration: 0.8 }}
                   className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl"
                 >
-                  <img src="https://superformance.com/images/about-car.jpg" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <img src="https://i.ibb.co/VW3rdLxz/corvette-daytona-cobra-1.webp" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </motion.div>
               </div>
             </div>
@@ -633,7 +633,7 @@ function App() {
                 className="grid md:grid-cols-2 gap-12 items-center"
               >
                 <div className="relative w-full aspect-video rounded-xl shadow-2xl overflow-hidden">
-                  <img src="https://superformance.com/images/history.jpg" alt="Superformance History" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <img src="https://i.ibb.co/VW3rdLxz/corvette-daytona-cobra-1.webp" alt="Superformance History" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-white">Our Story</h2>
