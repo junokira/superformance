@@ -153,14 +153,14 @@ const teamMembers = [
 ];
 
 const newRecreations = [
-  { name: "Cinema Series", image: "https://superformance.com/images/home/cinema-series.jpg" },
-  { name: "MkIII", image: "https://superformance.com/images/home/mkiii.jpg" },
-  { name: "MkII", image: "https://superformance.com/images/home/mkii.jpg" },
-  { name: "Daytona Coupe", image: "https://superformance.com/images/home/daytona-coupe.jpg" },
-  { name: "GT40", image: "https://superformance.com/images/home/gt40.jpg" },
-  { name: "Corvette", image: "https://superformance.com/images/home/corvette.jpg" },
-  { name: "Shelby", image: "https://superformance.com/images/home/shelby.jpg" },
-  { name: "MkIII-E", image: "https://superformance.com/images/home/mkiii-e.jpg" },
+  { name: "Cinema Series", image: "https://i.ibb.co/d8t5YKp/thumbnail-cinema.webp" },
+  { name: "MkIII", image: "https://i.ibb.co/1Jz6J6Vg/thumbnail-mkiii.webp" },
+  { name: "MkII", image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp" },
+  { name: "Daytona Coupe", image: "https://i.ibb.co/pB7bbBcH/thumbnail-coupe.webp" },
+  { name: "GT40", image: "https://i.ibb.co/Y4XWWY4t/nav-gt40-toolroom.webp" },
+  { name: "Corvette", image: "https://i.ibb.co/TDnBDySF/thumbnail-corvette.webp" },
+  { name: "Shelby", image: "https://i.ibb.co/hJFrjxw6/thumbnail-shelby-cobra-csx.webp" },
+  { name: "MkIII-E", image: "https://i.ibb.co/7NtKM4nK/02-large.webp" },
 ];
 
 const services = [
@@ -275,7 +275,7 @@ function App() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                  className="text-sm sm:text-base md:text-lg font-light text-gray-400 font-sans tracking-widest uppercase drop-shadow-lg"
+                  className="text-xs sm:text-base md:text-lg font-light text-gray-400 font-sans tracking-widest uppercase drop-shadow-lg"
                 >
                   Since 1996
                 </motion.p>
@@ -291,7 +291,7 @@ function App() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-5xl sm:text-6xl md:text-7xl font-black font-sans uppercase tracking-widest text-white drop-shadow-lg mt-0"
+                  className="text-4xl sm:text-6xl md:text-7xl font-black font-sans uppercase tracking-widest text-white drop-shadow-lg mt-0"
                 >
                   Superformance
                 </motion.h1>
@@ -333,8 +333,8 @@ function App() {
             </div>
 
             {/* Featured Video Section */}
-            <div className="bg-black/80 text-gray-200 py-24 px-4 sm:px-6 md:px-12">
-              <div className="max-w-7xl mx-auto space-y-12">
+            <div className="bg-black/80 text-gray-200 py-12 px-4 sm:px-6 md:px-12">
+              <div className="max-w-7xl mx-auto space-y-8">
                 <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-2xl">
                     <iframe 
                       className="absolute inset-0 w-full h-full"
@@ -626,7 +626,9 @@ function App() {
                   </p>
                 </div>
               </motion.div>
-              <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 mx-auto block mt-12" onClick={() => handleSetPage('about')}>Learn More <ArrowRight className="ml-2" size={20} /></Button>
+              <div className="flex justify-center mt-12">
+                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4" onClick={() => handleSetPage('about')}>Learn More <ArrowRight className="ml-2" size={20} /></Button>
+              </div>
               <div className="pt-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-red-600 text-center mb-12">Meet the Team</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -675,23 +677,40 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen font-sans text-white antialiased bg-black [background-image:radial-gradient(circle_at_10%_20%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_80%_50%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_45%_70%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_75%_95%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_20%_85%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_60%_10%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_90%_30%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_50%_90%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_50%_100%,_rgba(239,68,68,0.3)_150px,_transparent_0)] bg-fixed">
+    <div className="min-h-screen font-sans text-white antialiased bg-black [background-image:radial-gradient(circle_at_10%_20%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_80%_50%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_45%_70%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_75%_95%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_20%_85%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_60%_10%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_90%_30%,_rgba(239,68,68,0.1)_2px,_transparent_0),radial-gradient(circle_at_50%_90%,_rgba(239,68,68,0.3)_150px,_transparent_0)] bg-fixed">
       {/* Top Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black text-gray-200 text-xs sm:text-sm font-medium">
         <div className="max-w-8xl mx-auto flex items-center justify-between h-12 px-4 sm:px-6 md:px-12">
-          <div className="flex items-center gap-4">
+          {/* Mobile top left with phone */}
+          <div className="flex items-center gap-2 sm:hidden">
+            <a href="tel:+18002976253" className="flex items-center gap-1 text-red-500 hover:text-white transition-colors"><Phone size={20}/></a>
+          </div>
+
+          {/* Desktop top left with text */}
+          <div className="hidden sm:flex items-center gap-4">
             <span className="flex items-center gap-2 text-red-500">
               <Phone size={14} />
               <a href="tel:+18002976253" className="hover:text-white transition-colors">+1 800 297 6253</a>
             </span>
           </div>
+
           <div className="flex items-center space-x-2">
-            <img src="https://i.ibb.co/JjCPg6jX/white-superformance.png" alt="Superformance Logo" className="h-8" />
-            <button onClick={() => handleSetPage('home')} className="text-base sm:text-lg md:text-xl font-black tracking-widest uppercase text-red-600 focus:outline-none">
-              Superformance
+            <button onClick={() => handleSetPage('home')} className="flex items-center gap-2">
+              <img src="https://i.ibb.co/JjCPg6jX/white-superformance.png" alt="Superformance Logo" className="h-8" />
+              <span className="inline-block text-base sm:text-lg md:text-xl font-black tracking-widest uppercase text-red-600 focus:outline-none">
+                Superformance
+              </span>
             </button>
           </div>
-          <div className="flex items-center gap-4">
+
+          {/* Mobile top right icons */}
+          <div className="flex items-center gap-2 sm:hidden">
+            <a href="#" className="flex items-center gap-1 text-red-500 hover:text-white transition-colors"><LogIn size={20}/></a>
+            <a href="#" className="flex items-center gap-1 text-red-500 hover:text-white transition-colors"><UserPlus size={20}/></a>
+          </div>
+
+          {/* Desktop top right with text */}
+          <div className="hidden sm:flex items-center gap-4">
             <a href="#" className="flex items-center gap-1 text-red-500 hover:text-white transition-colors"><LogIn size={14}/> LOGIN</a>
             <a href="#" className="flex items-center gap-1 text-red-500 hover:text-white transition-colors"><UserPlus size={14}/> SPF REGISTRY</a>
           </div>
@@ -700,37 +719,25 @@ function App() {
 
       {/* Main Header */}
       <header className="fixed top-12 left-0 right-0 z-50 bg-black/80 backdrop-blur-md shadow-xl border-b border-gray-800">
-        <div className="max-w-8xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 md:px-12">
-          <nav className="hidden md:flex flex-1 justify-start gap-8 items-center text-sm font-medium">
-            {secondaryNavItems.slice(0, 3).map((item, index) => (
-              <button 
-                key={index} 
-                onClick={() => handleSetPage(item.page)} 
-                className={`flex items-center gap-2 hover:text-white transition-colors uppercase tracking-wider ${page === item.page ? 'text-red-600' : 'text-gray-400'}`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-          
-          <nav className="hidden md:flex flex-1 justify-end gap-8 items-center text-sm font-medium">
-            {secondaryNavItems.slice(3).map((item, index) => (
-              <button 
-                key={index} 
-                onClick={() => handleSetPage(item.page)} 
-                className={`flex items-center gap-2 hover:text-white transition-colors uppercase tracking-wider ${page === item.page ? 'text-red-600' : 'text-gray-400'}`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-
+        <div className="max-w-8xl mx-auto flex items-center h-16 px-4 sm:px-6 md:px-12">
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex-1 flex justify-end">
+          <div className="flex justify-center w-full md:hidden">
             <Button className="bg-transparent text-white hover:bg-gray-800" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu size={24} />
             </Button>
           </div>
+          
+          <nav className="hidden md:flex flex-1 justify-center items-center text-sm font-medium space-x-8">
+            {secondaryNavItems.map((item, index) => (
+              <button 
+                key={index} 
+                onClick={() => handleSetPage(item.page)} 
+                className={`flex items-center gap-2 hover:text-white transition-colors uppercase tracking-wider ${page === item.page ? 'text-red-600' : 'text-gray-400'}`}
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
         </div>
       </header>
 
@@ -738,21 +745,21 @@ function App() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-y-0 right-0 z-40 w-full bg-black/95 backdrop-blur-xl p-8 shadow-xl flex flex-col items-end pt-24"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl p-8 shadow-xl flex flex-col items-center justify-center pt-24"
           >
             <button className="absolute top-4 right-4 text-gray-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>
               <X size={32} />
             </button>
-            <nav className="flex flex-col gap-6 text-xl text-right font-medium">
+            <nav className="flex flex-col gap-6 text-xl text-center font-medium">
               {secondaryNavItems.map((item, index) => (
                 <button 
                   key={index} 
                   onClick={() => { handleSetPage(item.page); setIsMenuOpen(false); }} 
-                  className={`flex items-center gap-2 hover:text-white transition-colors ${page === item.page ? 'text-red-600' : 'text-white'}`}
+                  className={`flex items-center justify-center gap-2 hover:text-white transition-colors ${page === item.page ? 'text-red-600' : 'text-white'}`}
                 >
                   {item.name}
                 </button>
