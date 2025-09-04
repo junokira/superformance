@@ -351,7 +351,7 @@ function App() {
             {/* Our Recreations Section */}
             <div className="bg-black/80 text-gray-200 py-24 px-4 sm:px-6 md:px-12">
               <div className="max-w-7xl mx-auto text-center space-y-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white">Our Recreations</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white">Factory Models</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                   {newRecreations.map((car, index) => (
                     <motion.div
@@ -382,7 +382,7 @@ function App() {
             <div className="bg-black/80 text-gray-200 py-24 px-4 sm:px-6 md:px-12">
               <div className="max-w-7xl mx-auto space-y-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-white text-center">Our Services</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {services.map((service, index) => (
                     <motion.div
                       key={index}
@@ -412,15 +412,16 @@ function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.8 }}
-                  className="space-y-6"
+                  className="space-y-6 text-center md:text-left flex flex-col items-center md:items-start"
                 >
                   <h2 className="text-4xl md:text-5xl font-bold text-white">Our Heritage</h2>
                   <p className="text-lg leading-relaxed text-gray-300">
-                    Since 1994, Superformance has been the world leader in building authentic, officially-licensed recreations of classic cars. We are dedicated to building vehicles of the highest quality, with attention to detail and a passion for automotive history. Our mission is to provide enthusiasts with the opportunity to own a piece of history that is not only beautiful, but also performs at the highest level.
+                    Since 1996, Superformance has been the world leader in building authentic, officially-licensed recreations of classic cars. We are dedicated to building vehicles of the highest quality, with attention to detail and a passion for automotive history. Our mission is to provide enthusiasts with the opportunity to own a piece of history that is not only beautiful, but also performs at the highest level.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-300">
                     The provided image is a placeholder and should not be considered an actual photograph of a Superformance car. It is included for design purposes only.
                   </p>
+                  <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 mt-6 mx-auto md:mx-0" onClick={() => handleSetPage('about')}>Learn More <ArrowRight className="ml-2" size={20} /></Button>
                 </motion.div>
                 <motion.div 
                   initial={{ opacity: 0, x: 50 }}
@@ -429,10 +430,9 @@ function App() {
                   transition={{ duration: 0.8 }}
                   className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl"
                 >
-                  <img src="https://superformance.com/images/about-car.jpg" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <img src="https://i.ibb.co/x8fbQbMr/img4.webp" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </motion.div>
               </div>
-              <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 mx-auto block mt-12" onClick={() => handleSetPage('about')}>Learn More <ArrowRight className="ml-2" size={20} /></Button>
             </div>
           </>
         );
@@ -614,15 +614,12 @@ function App() {
                 className="grid md:grid-cols-2 gap-12 items-center"
               >
                 <div className="relative w-full aspect-video rounded-xl shadow-2xl overflow-hidden">
-                  <img src="https://superformance.com/images/history.jpg" alt="Superformance History" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <img src="https://i.ibb.co/rRn8Zj5J/cobra-inventory-2.webp" alt="Superformance History" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-white">Our Story</h2>
                   <p className="text-lg leading-relaxed text-gray-300">
                     Founded in 1994, Superformance LLC is the only company in the world that has a license from Carroll Shelby Licensing to build a complete Shelby Cobra replica. Our passion for authentic, high-quality, and performance-driven vehicles has made us a leader in the industry. We are committed to preserving the legacy of these iconic cars while incorporating modern technologies for reliability and a superior driving experience.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-300">
-                    The provided image is a placeholder and should not be considered an actual photograph of a Superformance car. It is included for design purposes only.
                   </p>
                 </div>
               </motion.div>
@@ -787,7 +784,7 @@ function App() {
       <footer className="bg-black/80 py-16 px-4 sm:px-6 md:px-12 text-gray-400 text-sm border-t-8 border-red-700">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 border-b border-gray-700 pb-12 mb-12">
           {/* Contact Info (Left) */}
-          <div className="flex flex-col items-start gap-4">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
             <h4 className="text-lg font-bold text-white mb-2">Contact Us</h4>
             <div className="flex flex-col gap-2">
               <span className="flex items-center gap-2"><Phone size={18}/><a href="tel:+18002976253" className="hover:text-red-400 transition-colors">+1 800 297 6253</a></span>
@@ -797,7 +794,7 @@ function App() {
           </div>
           
           {/* Logo & Company Info (Middle) */}
-          <div className="flex flex-col items-start gap-4 md:items-center md:text-center">
+          <div className="flex flex-col items-center text-center gap-4">
             <img src="https://i.ibb.co/JjCPg6jX/white-superformance.png" alt="Superformance Logo" className="h-10" />
             <p className="text-gray-400 leading-relaxed">
               Official Licensed Recreations of Iconic Vehicles. Built with a passion for history and performance.
@@ -805,7 +802,7 @@ function App() {
           </div>
           
           {/* Social Links (Right) */}
-          <div className="flex flex-col items-start gap-4 md:items-end md:text-right">
+          <div className="flex flex-col items-center md:items-end text-center md:text-right gap-4">
             <h4 className="text-lg font-bold text-white mb-2">Connect</h4>
             <div className="flex gap-4 text-gray-400">
               <a href="https://instagram.com/superformance" target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors"><Instagram size={24} /></a>
