@@ -53,30 +53,30 @@ const dealersData = {
 
 const vehicles = [
   {
+    name: "Cinema Series",
+    year: "2023",
+    engine: "Custom V8",
+    type: "Roadster",
+    image: "https://i.ibb.co/d8t5YKp/thumbnail-cinema.webp",
+    features: [
+      { icon: Flame, text: "Authentic design & performance" },
+      { icon: Gauge, text: "High-performance engines" },
+      { icon: Wrench, text: "Durable & race-ready chassis" },
+    ],
+    details: "The Cinema Series is a special edition vehicle, built to replicate the iconic cars seen on the big screen. It combines classic styling with modern engineering and reliability, offering a unique and exhilarating driving experience that is as true to the original as possible."
+  },
+  {
     name: "MkIII",
     year: "1965",
     engine: "427 S/C",
     type: "Roadster",
     image: "https://superformance.com/images/vehicles/mkiii/MkIII_main.jpg",
     features: [
-      { icon: Flame, text: "Authentic design & performance" },
-      { icon: Gauge, text: "High-performance engines" },
-      { icon: Wrench, text: "Durable & race-ready chassis" },
-    ],
-    details: "The Superformance MkIII is a replica of the legendary 1965 Shelby Cobra. It combines the classic styling of the original with modern engineering and reliability. Each vehicle is built to the highest standards, offering an exhilarating driving experience that is as true to the original as possible. With a meticulously crafted chassis and a wide range of engine options, the MkIII is a timeless tribute to a racing icon."
-  },
-  {
-    name: "MkIII-R",
-    year: "2023",
-    engine: "Custom V8",
-    type: "Roadster",
-    image: "https://superformance.com/images/vehicles/mkiii-r/MkIII-R_main.jpg",
-    features: [
       { icon: Rocket, text: "Modern, aggressive styling" },
       { icon: Sparkles, text: "Advanced aerodynamics" },
       { icon: Package, text: "Customizable options" },
     ],
-    details: "The MkIII-R is the next evolution of the MkIII, featuring a more modern, aggressive design with updated styling cues and enhanced performance features. It offers a unique blend of heritage and cutting-edge design, making it a standout on the road and track. With its sleek lines and powerful presence, the MkIII-R represents the future of Superformance."
+    details: "The Superformance MkIII is a replica of the legendary 1965 Shelby Cobra. It combines the classic styling of the original with modern engineering and reliability. Each vehicle is built to the highest standards, offering an exhilarating driving experience that is as true to the original as possible. With a meticulously crafted chassis and a wide range of engine options, the MkIII is a timeless tribute to a racing icon."
   },
   {
     name: "MkII",
@@ -92,20 +92,20 @@ const vehicles = [
     details: "The MkII is a faithful recreation of the 1963 Shelby 289 street car, capturing the elegance and simplicity of the early roadsters. It is a purist's dream, offering a lightweight and responsive platform for spirited driving. Every detail, from the body shape to the interior, has been meticulously researched to ensure historical accuracy."
   },
   {
-    name: "MkII-S",
-    year: "1964",
-    engine: "289 FIA",
-    type: "Roadster",
-    image: "https://superformance.com/images/vehicles/mkii-s/MkII-S_main.jpg",
+    name: "Daytona Coupe",
+    year: "1965",
+    engine: "427 S/C",
+    type: "Coupe",
+    image: "https://i.ibb.co/pB7bbBcH/thumbnail-coupe.webp",
     features: [
-      { icon: Compass, text: "FIA-approved racing replica" },
-      { icon: Dribbble, text: "Track-focused suspension" },
-      { icon: Fuel, text: "High-performance fuel cell" },
+      { icon: Award, text: "Le Mans winning heritage" },
+      { icon: Shapes, text: "Iconic body lines" },
+      { icon: Gauge, text: "High-revving V8 power" },
     ],
-    details: "The MkII-S is the ultimate track-day car, a recreation of the famous 289 FIA race cars. Built for competition, it features a race-ready chassis, upgraded suspension, and a powerful engine. It's designed to dominate on the track, offering a raw and visceral driving experience that is unmatched."
+    details: "The Daytona Coupe is a legendary vehicle with a rich racing history. Superformance's recreation is a faithful tribute to this classic, with its stunning aerodynamic design and powerful performance. It is a car that is as beautiful to look at as it is thrilling to drive."
   },
   {
-    name: "GT40 MkI",
+    name: "GT40",
     year: "1966",
     engine: "Ford 289/302",
     type: "Coupe",
@@ -118,30 +118,43 @@ const vehicles = [
     details: "The Superformance GT40 MkI is a licensed replica of the legendary car that won the 24 Hours of Le Mans. With its classic lines and a mid-engine V8, it is a true piece of automotive history. This vehicle offers the chance to own a piece of a racing legacy, combining thrilling performance with a stunning design."
   },
   {
-    name: "MkII FIA",
-    year: "1965",
-    engine: "289",
+    name: "Corvette",
+    year: "1963",
+    engine: "327 V8",
     type: "Roadster",
-    image: "https://superformance.com/images/vehicles/mkii-fia/MkII-FIA_main.jpg",
+    image: "https://i.ibb.co/TDnBDySF/thumbnail-corvette.webp",
     features: [
-      { icon: Handshake, text: "FIA-sanctioned chassis" },
-      { icon: CarFront, text: "Authentic racing components" },
-      { icon: Rocket, text: "Extremely lightweight" },
+      { icon: Handshake, text: "Authentic components" },
+      { icon: CarFront, text: "Classic American muscle" },
+      { icon: Rocket, text: "Powerful and reliable" },
     ],
-    details: "The MkII FIA is a race-spec version of the MkII, built to compete in historic racing events. It is a no-compromise race car, with a focus on performance and handling. This vehicle is for the serious enthusiast who wants to experience what it's like to drive a true vintage race car."
+    details: "The Superformance Corvette Grand Sport is a stunning recreation of a rare and highly sought-after racing vehicle. It is built to be a true performance machine, capturing the essence of the original with its powerful engine and aggressive stance. This car is for the serious enthusiast who wants to own a piece of racing history."
   },
   {
-    name: "MkIII-S",
-    year: "2018",
+    name: "Shelby",
+    year: "1965",
     engine: "427 S/C",
     type: "Roadster",
-    image: "https://superformance.com/images/vehicles/mkiii-s/MkIII-S_main.jpg",
+    image: "https://i.ibb.co/hJFrjxw6/thumbnail-shelby-cobra-csx.webp",
     features: [
       { icon: Tag, text: "Special edition model" },
       { icon: Flame, text: "Enhanced performance features" },
       { icon: Wrench, text: "Unique styling cues" },
     ],
-    details: "The MkIII-S is a special edition of the MkIII, offering a unique blend of styling and performance. It features a range of enhancements and custom details that set it apart from the standard model. This vehicle is for the collector who wants something truly special."
+    details: "The Superformance Shelby is a special edition of the MkIII, offering a unique blend of styling and performance. It features a range of enhancements and custom details that set it apart from the standard model. This vehicle is for the collector who wants something truly special."
+  },
+  {
+    name: "MkIII-E",
+    year: "2023",
+    engine: "Electric Motor",
+    type: "Roadster",
+    image: "https://i.ibb.co/7NtKM4nK/02-large.webp",
+    features: [
+      { icon: Fuel, text: "Zero emissions" },
+      { icon: Gauge, text: "Instant torque" },
+      { icon: Sparkles, text: "Modern electric power" },
+    ],
+    details: "The MkIII-E represents the future of Superformance, combining the classic MkIII design with a modern electric powertrain. It offers an exhilarating driving experience with instant torque and silent acceleration. This vehicle is a perfect blend of heritage and innovation, for those who want to experience classic car motoring in a whole new way."
   },
 ];
 
@@ -361,7 +374,13 @@ function App() {
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-                      onClick={() => handleSetPage('models')}
+                      onClick={() => {
+                        const selectedVehicle = vehicles.find(v => v.name === car.name);
+                        if (selectedVehicle) {
+                          setActiveVehicle(selectedVehicle);
+                          handleSetPage('vehicle-detail');
+                        }
+                      }}
                     >
                       <img src={car.image} alt={car.name} className="w-full h-32 sm:h-48 object-cover object-center transition-transform duration-500 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
@@ -416,7 +435,7 @@ function App() {
                 >
                   <h2 className="text-4xl md:text-5xl font-bold text-white">Our Heritage</h2>
                   <p className="text-lg leading-relaxed text-gray-300">
-                    Since 1996, Superformance has been the world leader in building authentic, officially-licensed recreations of classic cars. We are dedicated to building vehicles of the highest quality, with attention to detail and a passion for automotive history. Our mission is to provide enthusiasts with the opportunity to own a piece of history that is not only beautiful, but also performs at the highest level.
+                    Since 1994, Superformance has been the world leader in building authentic, officially-licensed recreations of classic cars. We are dedicated to building vehicles of the highest quality, with attention to detail and a passion for automotive history. Our mission is to provide enthusiasts with the opportunity to own a piece of history that is not only beautiful, but also performs at the highest level.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-300">
                     The provided image is a placeholder and should not be considered an actual photograph of a Superformance car. It is included for design purposes only.
@@ -430,7 +449,7 @@ function App() {
                   transition={{ duration: 0.8 }}
                   className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl"
                 >
-                  <img src="https://i.ibb.co/x8fbQbMr/img4.webp" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <img src="https://superformance.com/images/about-car.jpg" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </motion.div>
               </div>
             </div>
@@ -614,12 +633,15 @@ function App() {
                 className="grid md:grid-cols-2 gap-12 items-center"
               >
                 <div className="relative w-full aspect-video rounded-xl shadow-2xl overflow-hidden">
-                  <img src="https://i.ibb.co/rRn8Zj5J/cobra-inventory-2.webp" alt="Superformance History" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  <img src="https://superformance.com/images/history.jpg" alt="Superformance History" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-white">Our Story</h2>
                   <p className="text-lg leading-relaxed text-gray-300">
                     Founded in 1994, Superformance LLC is the only company in the world that has a license from Carroll Shelby Licensing to build a complete Shelby Cobra replica. Our passion for authentic, high-quality, and performance-driven vehicles has made us a leader in the industry. We are committed to preserving the legacy of these iconic cars while incorporating modern technologies for reliability and a superior driving experience.
+                  </p>
+                  <p className="text-lg leading-relaxed text-gray-300">
+                    The provided image is a placeholder and should not be considered an actual photograph of a Superformance car. It is included for design purposes only.
                   </p>
                 </div>
               </motion.div>
