@@ -194,7 +194,7 @@ const inventory = [
     type: "Roadster",
     price: "$120,000",
     description: "Stunning MkIII in classic Guardsman Blue with white racing stripes. Only 5,000 miles since new. Fully documented history.",
-    image: "https://i.ibb.co/6P0J9yB/mkiii-inventory.jpg",
+    image: "https://i.ibb.co/1Jz6J6Vg/thumbnail-mkiii.webp",
     features: [
       { icon: Flame, text: "Authentic design" },
       { icon: Gauge, text: "High-performance engine" },
@@ -210,7 +210,7 @@ const inventory = [
     type: "Coupe",
     price: "$225,000",
     description: "This GT40 is a true masterpiece. Finished in Le Mans Red, it features a powerful Ford 302 engine and is ready for the track or the street.",
-    image: "https://i.ibb.co/3k5fB9p/gt40-inventory.jpg",
+    image: "https://i.ibb.co/Y4XWWY4t/nav-gt40-toolroom.webp",
     features: [
       { icon: Award, text: "Le Mans winning heritage" },
       { icon: Shapes, text: "Iconic body lines" },
@@ -226,7 +226,7 @@ const inventory = [
     type: "Coupe",
     price: "$195,000",
     description: "A rare and beautiful Daytona Coupe, finished in metallic silver. A head-turning car with incredible performance and a rich history.",
-    image: "https://i.ibb.co/GnH8vV5/daytona-inventory.jpg",
+    image: "https://i.ibb.co/pB7bbBcH/thumbnail-coupe.webp",
     features: [
       { icon: Rocket, text: "Aerodynamic design" },
       { icon: Package, text: "Customizable options" },
@@ -242,7 +242,7 @@ const inventory = [
     type: "Roadster",
     price: "$110,000",
     description: "A faithful recreation of the original 289 street car. This MkII is lightweight, nimble, and perfect for spirited driving. A must-see for purists.",
-    image: "https://i.ibb.co/rQ1Yf92/mkii-inventory.jpg",
+    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
     features: [
       { icon: Handshake, text: "FIA-sanctioned chassis" },
       { icon: CarFront, text: "Authentic components" },
