@@ -163,7 +163,7 @@ const vehicles = [
 
 const teamMembers = [
   { name: "Lance Stander", title: "CEO", bio: "With over 30 years of experience, Lance is a driving force behind Superformance's success.", image: "https://placehold.co/150x150/222/FFF?text=Lance" },
-  { name: "Amy", title: "Sales Director", bio: "Amy has a passion for cars and a deep knowledge of the entire Superformance lineup.", image: "https://placehold.co/150x150/222/FFF?text=Amy" },
+  { name: "Debbie Stander", title: "Sales Director", bio: "Debbie has a passion for cars and a deep knowledge of the entire Superformance lineup.", image: "https://placehold.co/150x150/222/FFF?text=D" },
   { name: "John", title: "Chief Engineer", bio: "John is the engineering genius behind the performance and reliability of our vehicles.", image: "https://placehold.co/150x150/222/FFF?text=John" },
   { name: "Sarah", title: "Marketing Lead", bio: "Sarah manages our brand presence and connects with enthusiasts around the world.", image: "https://placehold.co/150x150/222/FFF?text=Sarah" },
 ];
