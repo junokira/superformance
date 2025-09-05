@@ -83,7 +83,7 @@ const vehicles = [
     year: "1963",
     engine: "289",
     type: "Roadster",
-    image: "https://i.ibb.co/1Jz6J6Vg/thumbnail-mkii.webp",
+    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
     features: [
       { icon: Landmark, text: "Classic 'MkII' styling" },
       { icon: Users, text: "Vintage racing heritage" },
