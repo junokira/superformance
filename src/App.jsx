@@ -70,7 +70,7 @@ const vehicles = [
     year: "1965",
     engine: "427 S/C",
     type: "Roadster",
-    image: "https://superformance.com/images/vehicles/mkiii/MkIII_main.jpg",
+    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
     features: [
       { icon: Rocket, text: "Modern, aggressive styling" },
       { icon: Sparkles, text: "Advanced aerodynamics" },
@@ -83,7 +83,7 @@ const vehicles = [
     year: "1963",
     engine: "289",
     type: "Roadster",
-    image: "https://superformance.com/images/vehicles/mkii/MkII_main.jpg",
+    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
     features: [
       { icon: Landmark, text: "Classic 'MkII' styling" },
       { icon: Users, text: "Vintage racing heritage" },
@@ -109,7 +109,7 @@ const vehicles = [
     year: "1966",
     engine: "Ford 289/302",
     type: "Coupe",
-    image: "https://superformance.com/images/vehicles/gt40/GT40_main.jpg",
+    image: "https://i.ibb.co/Y4XWWY4t/nav-gt40-toolroom.webp",
     features: [
       { icon: Award, text: "Le Mans winning heritage" },
       { icon: Shapes, text: "Iconic body lines" },
@@ -252,11 +252,43 @@ const inventory = [
   },
 ];
 
+const partsCategories = [
+  "Accessories & Apparel",
+  "Battery, Coil, Ignition Related",
+  "Body Shell & GRP Panels",
+  "Body Trim, Bolt-On Parts ect",
+  "Brakes, Pedal Box & Related",
+  "Carpet, Soft Trim, Seats etc",
+  "Chassis & Scuttle Assembly",
+  "Cooling System & Related",
+  "Engine Mountings, Oil Cooler ect",
+  "Fuel, Accelerator, Exhaust ect",
+  "Gearbox, Clutch Related",
+  "Heater System & Related",
+  "Lighting & Related",
+  "Loom Assembly, Fuse Box ect",
+  "Rear Axle, Differential, Related",
+  "Suspension, Shocks, Steering",
+  "Switches, Gauges & Indicators",
+  "Toys & Collectibles",
+  "Wheels, Bearings & Related",
+  "Wiper Washers & Related"
+];
+
 function App() {
   const [page, setPage] = useState('home');
   const [activeVehicle, setActiveVehicle] = useState(vehicles[0]);
   const [activeDealerCountry, setActiveDealerCountry] = useState('usa');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // This effect ensures the device UI is styled for dark mode
+    document.body.style.backgroundColor = 'black';
+    const meta = document.createElement('meta');
+    meta.name = 'color-scheme';
+    meta.content = 'dark';
+    document.head.appendChild(meta);
+  }, []);
 
   // Function to handle page change and scroll to top
   const handleSetPage = (newPage) => {
@@ -572,6 +604,28 @@ function App() {
           </div>
         );
 
+      case 'parts':
+        return (
+          <div className="bg-black/80 text-gray-200 py-24 px-4 sm:px-6 md:px-12">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <h1 className="text-4xl md:text-5xl font-bold text-red-600 text-center">Parts & Accessories</h1>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
+                {partsCategories.map((category, index) => (
+                  <Card key={index} className="flex items-center p-6 transition-all duration-300 transform hover:scale-105 hover:bg-gray-800">
+                    <Package size={24} className="text-red-500 mr-4 flex-shrink-0" />
+                    <h3 className="text-lg font-bold text-white">{category}</h3>
+                  </Card>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        );
+
       case 'dealers':
         return (
           <div className="bg-black/80 text-gray-200 py-24 px-4 sm:px-6 md:px-12">
@@ -638,7 +692,7 @@ function App() {
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-white">Our Story</h2>
                   <p className="text-lg leading-relaxed text-gray-300">
-                    Founded in 1994, Superformance LLC is the only company in the world that has a license from Carroll Shelby Licensing to build a complete Shelby Cobra replica. Our passion for authentic, high-quality, and performance-driven vehicles has made us a leader in the industry. We are committed to preserving the legacy of these iconic cars while incorporating modern technologies for reliability and a superior driving experience.
+                    Founded in 1996, Superformance LLC is the only company in the world that has a license from Carroll Shelby Licensing to build a complete Shelby Cobra replica. Our passion for authentic, high-quality, and performance-driven vehicles has made us a leader in the industry. We are committed to preserving the legacy of these iconic cars while incorporating modern technologies for reliability and a superior driving experience.
                   </p>
                   <p className="text-lg leading-relaxed text-gray-300">
                     The provided image is a placeholder and should not be considered an actual photograph of a Superformance car. It is included for design purposes only.
@@ -715,7 +769,7 @@ function App() {
 
           <div className="flex items-center space-x-2">
             <button onClick={() => handleSetPage('home')} className="flex items-center gap-2">
-              <img src="https://i.ibb.co/JjCPg6jX/white-superformance.png" alt="Superformance Logo" className="h-8" />
+              <img src="https://i.ibb.co/n87fJ6T0/superformance-red-white.webp" alt="Superformance Logo" className="h-8" />
               <span className="inline-block text-base sm:text-lg md:text-xl font-black tracking-widest uppercase text-red-600 focus:outline-none">
                 Superformance
               </span>
@@ -817,7 +871,7 @@ function App() {
           
           {/* Logo & Company Info (Middle) */}
           <div className="flex flex-col items-center text-center gap-4">
-            <img src="https://i.ibb.co/JjCPg6jX/white-superformance.png" alt="Superformance Logo" className="h-10" />
+            <img src="https://i.ibb.co/n87fJ6T0/superformance-red-white.webp" alt="Superformance Logo" className="h-10" />
             <p className="text-gray-400 leading-relaxed">
               Official Licensed Recreations of Iconic Vehicles. Built with a passion for history and performance.
             </p>
@@ -835,7 +889,7 @@ function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto text-center md:flex md:justify-between md:items-center">
-          <p className="mb-4 md:mb-0">&copy; 2023 Superformance LLC. All Rights Reserved.</p>
+          <p className="mb-4 md:mb-0">&copy; 2025 Superformance LLC. All Rights Reserved.</p>
           <div className="flex justify-center gap-6">
             <a href="#" className="hover:text-red-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-red-400 transition-colors">Terms of Service</a>
