@@ -280,6 +280,7 @@ function App() {
   const [activeVehicle, setActiveVehicle] = useState(vehicles[0]);
   const [activeDealerCountry, setActiveDealerCountry] = useState('usa');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     // This effect ensures the device UI is styled for dark mode
@@ -288,6 +289,18 @@ function App() {
     meta.name = 'color-scheme';
     meta.content = 'dark';
     document.head.appendChild(meta);
+  }, []);
+
+  useEffect(() => {
+    // Dynamically inject Google Fonts link to the document head
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
   }, []);
 
   // Function to handle page change and scroll to top
@@ -336,7 +349,7 @@ function App() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-4xl sm:text-6xl md:text-7xl font-black font-sans uppercase tracking-widest text-white drop-shadow-lg mt-0"
+                  className="text-4xl sm:text-6xl md:text-7xl font-bold font-['Orbitron'] tracking-widest text-white drop-shadow-lg mt-0"
                 >
                   Superformance
                 </motion.h1>
@@ -455,7 +468,7 @@ function App() {
               </div>
             </div>
 
-            {/* About Section */}
+            {/* Our Heritage Section */}
             <div className="bg-black/80 text-gray-200 py-24 px-4 sm:px-6 md:px-12">
               <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
                 <motion.div 
@@ -484,6 +497,32 @@ function App() {
                   <img src="https://i.ibb.co/VW3rdLxz/corvette-daytona-cobra-1.webp" alt="Superformance car" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                 </motion.div>
               </div>
+
+              {/* Newsletter Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+                className="mt-24 max-w-2xl mx-auto text-center"
+              >
+                <Card className="p-8">
+                  <h3 className="text-3xl font-bold text-red-600 mb-2">Join Our Newsletter</h3>
+                  <p className="text-gray-400 mb-6">
+                    Stay up-to-date with the latest news, events, and special offers from Superformance.
+                  </p>
+                  <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-4">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 px-4 py-2 rounded-full border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    />
+                    <Button type="submit" className="bg-red-600 hover:bg-red-700 text-white px-8">Subscribe</Button>
+                  </form>
+                </Card>
+              </motion.div>
             </div>
           </>
         );
@@ -699,9 +738,6 @@ function App() {
                   </p>
                 </div>
               </motion.div>
-              <div className="flex justify-center mt-12">
-                <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4" onClick={() => handleSetPage('about')}>Learn More <ArrowRight className="ml-2" size={20} /></Button>
-              </div>
               <div className="pt-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-red-600 text-center mb-12">Meet the Team</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -770,7 +806,7 @@ function App() {
           <div className="flex items-center space-x-2">
             <button onClick={() => handleSetPage('home')} className="flex items-center gap-2">
               <img src="https://i.ibb.co/n87fJ6T0/superformance-red-white.webp" alt="Superformance Logo" className="h-8" />
-              <span className="inline-block text-base sm:text-lg md:text-xl font-black tracking-widest uppercase text-red-600 focus:outline-none">
+              <span className="inline-block text-base sm:text-lg md:text-xl font-bold font-['Orbitron'] tracking-widest text-white focus:outline-none">
                 Superformance
               </span>
             </button>
