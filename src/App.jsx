@@ -4,9 +4,12 @@ import { Car, Phone, MapPin, Mail, Search, MessageSquare, Trash, Factory, Flame,
 
 // Recreating shadcn/ui components with a new design system
 const Card = ({ className, children, ...props }) => (
-  <div className={`relative overflow-hidden rounded-xl border-2 border-red-900 bg-gray-900/50 text-gray-200 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:hover:border-red-600 ${className}`} {...props}>
+  <motion.div
+    whileHover={{ scale: 1.01 }}
+    transition={{ duration: 0.3 }}
+    className={`relative overflow-hidden rounded-xl border-2 border-red-900 bg-gray-900/50 text-gray-200 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:hover:border-red-600 ${className}`} {...props}>
     {children}
-  </div>
+  </motion.div>
 );
 
 const CardContent = ({ className, children, ...props }) => (
@@ -194,7 +197,7 @@ const inventory = [
     type: "Roadster",
     price: "$120,000",
     description: "Stunning MkIII in classic Guardsman Blue with white racing stripes. Only 5,000 miles since new. Fully documented history.",
-    image: "https://i.ibb.co/1Jz6J6Vg/thumbnail-mkiii.webp",
+    image: "https://i.ibb.co/6P0J9yB/mkiii-inventory.jpg",
     features: [
       { icon: Flame, text: "Authentic design" },
       { icon: Gauge, text: "High-performance engine" },
@@ -210,7 +213,7 @@ const inventory = [
     type: "Coupe",
     price: "$225,000",
     description: "This GT40 is a true masterpiece. Finished in Le Mans Red, it features a powerful Ford 302 engine and is ready for the track or the street.",
-    image: "https://i.ibb.co/Y4XWWY4t/nav-gt40-toolroom.webp",
+    image: "https://i.ibb.co/3k5fB9p/gt40-inventory.jpg",
     features: [
       { icon: Award, text: "Le Mans winning heritage" },
       { icon: Shapes, text: "Iconic body lines" },
@@ -226,7 +229,7 @@ const inventory = [
     type: "Coupe",
     price: "$195,000",
     description: "A rare and beautiful Daytona Coupe, finished in metallic silver. A head-turning car with incredible performance and a rich history.",
-    image: "https://i.ibb.co/pB7bbBcH/thumbnail-coupe.webp",
+    image: "https://i.ibb.co/GnH8vV5/daytona-inventory.jpg",
     features: [
       { icon: Rocket, text: "Aerodynamic design" },
       { icon: Package, text: "Customizable options" },
@@ -242,7 +245,7 @@ const inventory = [
     type: "Roadster",
     price: "$110,000",
     description: "A faithful recreation of the original 289 street car. This MkII is lightweight, nimble, and perfect for spirited driving. A must-see for purists.",
-    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
+    image: "https://i.ibb.co/rQ1Yf92/mkii-inventory.jpg",
     features: [
       { icon: Handshake, text: "FIA-sanctioned chassis" },
       { icon: CarFront, text: "Authentic components" },
@@ -275,11 +278,23 @@ const partsCategories = [
   "Wiper Washers & Related"
 ];
 
+const faqs = {
+  'models': 'We offer a range of models including the MkIII, Daytona Coupe, GT40, and more.',
+  'delivery': 'Delivery times vary based on model, customization, and location. Please contact a dealer for a precise estimate.',
+  'payment': 'Our dealers accept various payment methods and can assist with financing options.',
+  'test drive': 'Please contact a local dealer to schedule a test drive. You can find our dealers on the "Dealers" page.',
+  'parts': 'We provide a full range of genuine Superformance parts and accessories through our authorized dealers.',
+  'default': 'I am sorry, I do not have information on that topic. Please ask a question about our models, dealers, or parts.'
+};
+
 function App() {
   const [page, setPage] = useState('home');
   const [activeVehicle, setActiveVehicle] = useState(vehicles[0]);
   const [activeDealerCountry, setActiveDealerCountry] = useState('usa');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [chatMessages, setChatMessages] = useState([{ sender: 'bot', text: "Hello! I can answer questions about our models, dealers, and parts." }]);
+  const [chatInput, setChatInput] = useState('');
   const [email, setEmail] = useState('');
 
   useEffect(() => {
@@ -308,6 +323,31 @@ function App() {
     setPage(newPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsMenuOpen(false); // Close mobile menu on page change
+  };
+
+  const handleChatInput = (e) => {
+    setChatInput(e.target.value);
+  };
+
+  const handleSendChat = () => {
+    const userMessage = chatInput.trim();
+    if (!userMessage) return;
+
+    setChatMessages(prev => [...prev, { sender: 'user', text: userMessage }]);
+    setChatInput('');
+
+    let botResponse = faqs.default;
+    const lowerCaseMessage = userMessage.toLowerCase();
+    for (const keyword in faqs) {
+      if (lowerCaseMessage.includes(keyword)) {
+        botResponse = faqs[keyword];
+        break;
+      }
+    }
+
+    setTimeout(() => {
+      setChatMessages(prev => [...prev, { sender: 'bot', text: botResponse }]);
+    }, 500);
   };
 
   const renderPage = () => {
@@ -613,9 +653,12 @@ function App() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="grid md:grid-cols-2 gap-12 items-center"
+                className="grid md:grid-cols-2 gap-12 items-center flex-col-reverse md:flex-row"
               >
-                <div className="space-y-6">
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl order-1 md:order-2">
+                  <img src={activeVehicle.image} alt={activeVehicle.name} className="w-full h-full object-cover object-center" />
+                </div>
+                <div className="space-y-6 order-2 md:order-1">
                   <h1 className="text-5xl md:text-6xl font-bold text-red-600">{activeVehicle.name}</h1>
                   <p className="text-xl text-gray-400">{activeVehicle.year} {activeVehicle.type}</p>
                   <p className="text-lg leading-relaxed text-gray-300">{activeVehicle.details}</p>
@@ -634,9 +677,6 @@ function App() {
                     </Card>
                   </div>
                   <Button className="bg-red-600 hover:bg-red-700 text-white w-full mt-6" onClick={() => handleSetPage('dealers')}>Find a Dealer</Button>
-                </div>
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
-                  <img src={activeVehicle.image} alt={activeVehicle.name} className="w-full h-full object-cover object-center" />
                 </div>
               </motion.div>
             </div>
@@ -891,6 +931,65 @@ function App() {
           </motion.div>
         </AnimatePresence>
       </main>
+
+      {/* Chatbot Button */}
+      <motion.button 
+        className="fixed bottom-6 right-6 z-50 bg-red-600 text-white rounded-full p-4 shadow-xl hover:bg-red-700 transition-colors"
+        onClick={() => setIsChatbotOpen(!isChatbotOpen)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <MessageSquare size={24} />
+      </motion.button>
+
+      {/* Chatbot Window */}
+      <AnimatePresence>
+        {isChatbotOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-24 right-6 z-50 w-full max-w-sm h-96 bg-gray-900 rounded-xl shadow-2xl flex flex-col overflow-hidden"
+          >
+            <div className="bg-gray-800 text-white p-4 flex justify-between items-center border-b border-gray-700">
+              <h3 className="font-bold">Superformance FAQ Bot</h3>
+              <button onClick={() => setIsChatbotOpen(false)} className="text-gray-400 hover:text-white transition-colors">
+                <X size={20} />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              {chatMessages.map((msg, index) => (
+                <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  <div className={`p-3 rounded-xl max-w-[80%] ${msg.sender === 'user' ? 'bg-red-600 text-white' : 'bg-gray-700 text-gray-200'}`}>
+                    {msg.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="p-4 bg-gray-800 border-t border-gray-700">
+              <div className="flex items-center rounded-full bg-gray-700 p-1">
+                <input
+                  type="text"
+                  placeholder="Ask a question..."
+                  className="flex-1 bg-transparent text-white p-2 outline-none"
+                  value={chatInput}
+                  onChange={handleChatInput}
+                  onKeyPress={(e) => e.key === 'Enter' && handleSendChat()}
+                />
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={handleSendChat}
+                  className="bg-red-600 text-white rounded-full p-2 transition-colors hover:bg-red-700"
+                >
+                  <ArrowRight size={20} />
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Footer */}
       <footer className="bg-black/80 py-16 px-4 sm:px-6 md:px-12 text-gray-400 text-sm border-t-8 border-red-700">
