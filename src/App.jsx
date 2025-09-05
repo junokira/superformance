@@ -163,7 +163,7 @@ const vehicles = [
 
 const teamMembers = [
   { name: "Lance Stander", title: "CEO", bio: "With over 30 years of experience, Lance is a driving force behind Superformance's success.", image: "https://placehold.co/150x150/222/FFF?text=Lance" },
-  { name: "Debbie Stander", title: "Sales Director", bio: "Debbie has a passion for cars and a deep knowledge of the entire Superformance lineup.", image: "https://placehold.co/150x150/222/FFF?text=D" },
+  { name: "Amy", title: "Sales Director", bio: "Amy has a passion for cars and a deep knowledge of the entire Superformance lineup.", image: "https://placehold.co/150x150/222/FFF?text=Amy" },
   { name: "John", title: "Chief Engineer", bio: "John is the engineering genius behind the performance and reliability of our vehicles.", image: "https://placehold.co/150x150/222/FFF?text=John" },
   { name: "Sarah", title: "Marketing Lead", bio: "Sarah manages our brand presence and connects with enthusiasts around the world.", image: "https://placehold.co/150x150/222/FFF?text=Sarah" },
 ];
@@ -950,7 +950,7 @@ function App() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-50 w-full max-w-sm h-96 bg-gray-900 rounded-xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-4 inset-x-4 z-50 w-auto max-w-md md:bottom-6 md:right-6 md:inset-x-auto h-96 bg-gray-900 rounded-xl shadow-2xl flex flex-col overflow-hidden"
           >
             <div className="bg-gray-800 text-white p-4 flex justify-between items-center border-b border-gray-700">
               <h3 className="font-bold">Superformance FAQ Bot</h3>
