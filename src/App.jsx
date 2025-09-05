@@ -70,7 +70,7 @@ const vehicles = [
     year: "1965",
     engine: "427 S/C",
     type: "Roadster",
-    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
+    image: "https://i.ibb.co/1Jz6J6Vg/thumbnail-mkiii.webp",
     features: [
       { icon: Rocket, text: "Modern, aggressive styling" },
       { icon: Sparkles, text: "Advanced aerodynamics" },
@@ -83,7 +83,7 @@ const vehicles = [
     year: "1963",
     engine: "289",
     type: "Roadster",
-    image: "https://i.ibb.co/3yK3ZYLP/thumbnail-mkii.webp",
+    image: "https://i.ibb.co/1Jz6J6Vg/thumbnail-mkii.webp",
     features: [
       { icon: Landmark, text: "Classic 'MkII' styling" },
       { icon: Users, text: "Vintage racing heritage" },
@@ -328,7 +328,7 @@ function App() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  src="https://i.ibb.co/JjCPg6jX/white-superformance.png" 
+                  src="https://i.ibb.co/n87fJ6T0/superformance-red-white.webp" 
                   alt="Superformance Logo" 
                   className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 drop-shadow-lg"
                 />
